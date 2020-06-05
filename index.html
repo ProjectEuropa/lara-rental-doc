@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Laravel on レンタルサーバーの使い方 | Laravel on レンタルサーバーの使い方</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    
+    <meta name="description" content="レンタルサーバーでのLaravelの使い方にフォーカスを当てて解説します">
+    <link rel="preload" href="/lara-rental-doc/assets/css/0.styles.40658638.css" as="style"><link rel="preload" href="/lara-rental-doc/assets/js/app.c7806690.js" as="script"><link rel="preload" href="/lara-rental-doc/assets/js/2.de122e16.js" as="script"><link rel="preload" href="/lara-rental-doc/assets/js/5.ceceee71.js" as="script"><link rel="prefetch" href="/lara-rental-doc/assets/js/3.8c03a58e.js"><link rel="prefetch" href="/lara-rental-doc/assets/js/4.b5411679.js"><link rel="prefetch" href="/lara-rental-doc/assets/js/6.76dce4a0.js">
+    <link rel="stylesheet" href="/lara-rental-doc/assets/css/0.styles.40658638.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lara-rental-doc/" class="home-link router-link-exact-active router-link-active"><!----> <span class="site-name">Laravel on レンタルサーバーの使い方</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lara-rental-doc/" class="nav-link router-link-exact-active router-link-active">
+  Home
+</a></div><div class="nav-item"><a href="/lara-rental-doc/how-to-use-bootstrap.html" class="nav-link">
+  Bootstrap
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lara-rental-doc/" class="nav-link router-link-exact-active router-link-active">
+  Home
+</a></div><div class="nav-item"><a href="/lara-rental-doc/how-to-use-bootstrap.html" class="nav-link">
+  Bootstrap
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Laravel on レンタルサーバーの使い方</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lara-rental-doc/#ディレクトリ構造" class="sidebar-link">ディレクトリ構造</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lara-rental-doc/#htaccessの設定" class="sidebar-link">.htaccessの設定</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lara-rental-doc/#レンタルサーバー特有のlaravelの使い方-sshの場合" class="sidebar-link">レンタルサーバー特有のLaravelの使い方(SSHの場合)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lara-rental-doc/#db接続方法" class="sidebar-link">DB接続方法</a></li></ul></li><li><a href="/lara-rental-doc/#レンタルサーバー特有のlaravelの使い方-ftpの場合" class="sidebar-link">レンタルサーバー特有のLaravelの使い方(FTPの場合)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lara-rental-doc/#db接続方法-2" class="sidebar-link">DB接続方法</a></li><li class="sidebar-sub-header"><a href="/lara-rental-doc/#マイグレーション手順" class="sidebar-link">マイグレーション手順</a></li><li class="sidebar-sub-header"><a href="/lara-rental-doc/#デプロイ手順" class="sidebar-link">デプロイ手順</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="laravel-on-レンタルサーバーの使い方"><a href="#laravel-on-レンタルサーバーの使い方" class="header-anchor">#</a> Laravel on レンタルサーバーの使い方</h1> <h2 id="ディレクトリ構造"><a href="#ディレクトリ構造" class="header-anchor">#</a> ディレクトリ構造</h2> <div class="language- extra-class"><pre class="language-text"><code>Laravel-Project
+├── .htaccess #Laravelのドキュメントルートを無理やり変えるための設定ファイル
+├── .env #Laravelアプリケーションの環境設定ファイル
+├── app #Laravelアプリケーションのメインディレクトリ
+├── artisan #基本編集しない(artisan コマンド設定ファイル)
+├── bootstrap #基本編集しない(Laravel設定ディレクトリ)
+├── composer.json #composer設置ファイル
+├── composer.lock #composer設置ファイル
+├── config #Laravel全般の設定ディレクトリ
+├── database #データベース設定関連ディレクトリ
+├── package.json #基本編集しない
+├── phpunit.xml #基本編集しない
+├── public #公開ディレクトリ
+├── resources #view関連で設定するディレクトリ
+├── routes #ルーティング設定ディレクトリ
+├── server.php #基本編集しない
+├── storage #基本編集しない
+├── tests #基本編集しない(テストコード関連ディレクトリ)
+├── vendor #基本編集しない
+└── webpack.mix.js #基本編集しない(Node.js実行時には設定が必要です)
+</code></pre></div><h2 id="htaccessの設定"><a href="#htaccessの設定" class="header-anchor">#</a> <code>.htaccess</code>の設定</h2> <div class="language-.htaccess extra-class"><pre class="language-text"><code>&lt;IfModule mod_rewrite.c&gt;
+    &lt;IfModule mod_negotiation.c&gt;
+        Options -MultiViews
+    &lt;/IfModule&gt;
+
+    RewriteEngine on
+    RewriteBase /
+    RewriteRule ^$ public/ [L]
+    RewriteRule ^(.+)$ public/$1 [L]
+&lt;/IfModule&gt;
+</code></pre></div><h2 id="レンタルサーバー特有のlaravelの使い方-sshの場合"><a href="#レンタルサーバー特有のlaravelの使い方-sshの場合" class="header-anchor">#</a> レンタルサーバー特有のLaravelの使い方(SSHの場合)</h2> <h3 id="db接続方法"><a href="#db接続方法" class="header-anchor">#</a> DB接続方法</h3> <ul><li>.envを編集し、レンタルサーバーでのMySQLでの接続情報にしたがって記述してください</li></ul> <div class="language-.env extra-class"><pre class="language-text"><code>DB_CONNECTION=mysql #固定値
+DB_HOST=127.0.0.1 #MySQLのHOSTアドレス。特に記載がなければこのまま
+DB_PORT=3306 #DBport。特に記載がなければこのまま
+DB_DATABASE=laravel #DB名。MySQLの接続情報にしたがって記述してください
+DB_USERNAME=root #DB接続ユーザー名。MySQLでの接続情報にしたがって記述してください
+DB_PASSWORD= #DB接続パスワード。MySQLでの接続情報にしたがって記述してください
+</code></pre></div><ul><li>.env編集後php aritsan migrateでマイグレーションを実行します。</li></ul> <div class="language-console extra-class"><pre class="language-text"><code>$ php artisan migrate
+</code></pre></div><h2 id="レンタルサーバー特有のlaravelの使い方-ftpの場合"><a href="#レンタルサーバー特有のlaravelの使い方-ftpの場合" class="header-anchor">#</a> レンタルサーバー特有のLaravelの使い方(FTPの場合)</h2> <p>普通のLaravelの使い方であれば、検索すれば出てくるので割愛します。
+ここではレンタルサーバーでのLaravelの使い方にフォーカスを当てます。</p> <h3 id="db接続方法-2"><a href="#db接続方法-2" class="header-anchor">#</a> DB接続方法</h3> <ul><li>.envを編集し、レンタルサーバーでのMySQLでの接続情報にしたがって記述してください</li></ul> <div class="language-.env extra-class"><pre class="language-text"><code>DB_CONNECTION=mysql #固定値
+DB_HOST=127.0.0.1 #MySQLのHOSTアドレス。特に記載がなければこのまま
+DB_PORT=3306 #DBport。特に記載がなければこのまま
+DB_DATABASE=laravel #DB名。MySQLの接続情報にしたがって記述してください
+DB_USERNAME=root #DB接続ユーザー名。MySQLでの接続情報にしたがって記述してください
+DB_PASSWORD= #DB接続パスワード。MySQLでの接続情報にしたがって記述してください
+</code></pre></div><h3 id="マイグレーション手順"><a href="#マイグレーション手順" class="header-anchor">#</a> マイグレーション手順</h3> <ul><li>ローカル環境でマイグレーションファイル作成</li> <li>ローカル環境でマイグレーション実行</li> <li>phpMyAdminでローカル環境のデータをエクスポート</li> <li>phpMyAdminでローカル環境からエクスポートしたデータをレンタルサーバー上のMySQLにインポート</li></ul> <h3 id="デプロイ手順"><a href="#デプロイ手順" class="header-anchor">#</a> デプロイ手順</h3> <ul><li>ローカルでcomposerコマンドを叩いて、composer.jsonが変更された時は、vendorディレクトリを全てアップロードし直します</li> <li>ローカルで編集したファイルを全てアップロードし直します</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/lara-rental-doc/assets/js/app.c7806690.js" defer></script><script src="/lara-rental-doc/assets/js/2.de122e16.js" defer></script><script src="/lara-rental-doc/assets/js/5.ceceee71.js" defer></script>
+  </body>
+</html>
